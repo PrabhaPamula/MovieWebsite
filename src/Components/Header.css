@@ -1,3 +1,6 @@
+.search-bar-container {
+    position: relative;
+}
 .search {
     border: 2px solid black;
     border-radius: 5px;
@@ -7,4 +10,81 @@
 }
 .search:focus{
     outline: none;
+}
+
+
+/* Styles for the suggestions list */
+.suggestions-list {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 150px; 
+    overflow-y: auto;
+    background-color: #fff;
+    z-index: 1; 
+  }
+  .suggestions-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .suggestion {
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestion:hover {
+    background-color: #d4d1d1;
+  }
+
+
+
+  .navbar-item-icon{
+    color: white;
+    display: none;
+}
+
+
+@media screen and (max-width:700px) {
+  .nav-links{
+      display: none;
+  }
+  .nav-links-sidebar{
+      position: fixed;
+      background-color: rgb(91, 88, 88);
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      padding: 30px;
+      padding-top: 60px;
+      z-index: 1000;
+  }
+  .nav-links-sidebar{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+  }
+
+  .navbar-item-icon{
+      display: block;
+      position: absolute;
+      margin-top: 5px;
+      right: 30px;
+      gap: 10px;
+      color:white;
+      border: 1px solid white;
+      padding: 5px 10px;
+      z-index: 1001;
+  }
+}
+@media screen and (max-width:400px) {
+  
+  .search{
+    width: 150px;
+    padding: 8px;
+  }
 }

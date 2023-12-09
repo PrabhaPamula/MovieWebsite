@@ -10,11 +10,17 @@ export const SearchList = ({searchQuery}) => {
     console.log(searchQuery);
 
     const getMovies = (API) => {
-        fetch(API)
-        .then((res) => res.json())
-        .then((data) => {
-            setMovieList(data.results);
-        })
+        try {
+            fetch(API)
+            .then((res) => res.json())
+            .then((data) => {
+                setMovieList(data.results);
+            })
+        }
+        catch(error) {
+            console.error("Error fetching data",error);
+        }
+        
     }
     const SEARCH_API=`https://api.themoviedb.org/3/search/movie?&api_key=${TMDB_API_KEY}&query=`;
 
