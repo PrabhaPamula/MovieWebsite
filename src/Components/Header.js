@@ -65,9 +65,9 @@ export const Header = ({onSearch}) => {
 
   return (
     <>
-        <div className="header flex flex-row p-5 justify-between mx-5 ">
+        <div className="header flex flex-row p-5 justify-between mx-5">
             <div className="headerLeft flex gap-7">
-                <Link to="/"><img className="header__icon h-8 w-14 mt-1.5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png" /></Link>
+                <Link to="/" className='logo'>Movie<span>Hub</span></Link>
                 <form onSubmit={handleOnSubmit}>
                   <div className='search-bar-container'>
                     <input 

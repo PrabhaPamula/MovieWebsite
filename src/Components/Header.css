@@ -11,6 +11,16 @@
 .search:focus{
     outline: none;
 }
+.logo {
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 5px;
+}
+.logo span {
+  color: red;
+  font-weight: 100;
+}
 
 
 /* Styles for the suggestions list */
@@ -71,20 +81,33 @@
 
   .navbar-item-icon{
       display: block;
-      position: absolute;
+      /* position: absolute; */
       margin-top: 5px;
       right: 30px;
-      gap: 10px;
+      margin-left: 10px;
       color:white;
       border: 1px solid white;
       padding: 5px 10px;
       z-index: 1001;
   }
 }
-@media screen and (max-width:400px) {
+@media screen and (max-width:450px) {
   
   .search{
     width: 150px;
     padding: 8px;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .header{
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width:380px) {
+  .logo{
+    display: none;
   }
 }
