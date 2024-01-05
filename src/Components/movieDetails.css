@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 15px;
+    margin-bottom: 70px;
 }
 .backimg {
     width: 80%;
@@ -28,6 +30,11 @@
     width: 100%;
     border-radius: 10px;
 }
+.beside-poster {
+    display: flex;
+    justify-content: space-between;
+
+}
 .details_left .mtitle{
     text-align: left;
     margin-left: 15px;
@@ -38,6 +45,15 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+.watchlist-btn button{
+    background-color: green;
+    padding: 15px;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
 .general{
     padding-top: 15px;
     display: flex;
@@ -109,6 +125,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 
 
 @media screen and (max-width:700px) {

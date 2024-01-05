@@ -8,20 +8,29 @@ const TMDB_API_KEY = config.TMDB_API_KEY;
 export const SearchList = ({searchQuery}) => {
     const [movieList, setMovieList] = useState([]);
     console.log(searchQuery);
+    console.log(movieList);
 
-    const getMovies = (API) => {
-        try {
-            fetch(API)
-            .then((res) => res.json())
-            .then((data) => {
-                setMovieList(data.results);
-            })
+    const [error, setError] = useState(null);
+
+  const getMovies = (API) => {
+    fetch(API)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
         }
-        catch(error) {
-            console.error("Error fetching data",error);
-        }
-        
-    }
+        return res.json();
+      })
+      .then((data) => {
+        setMovieList(data.results);
+        setError(null); // Reset error state on successful fetch
+      })
+      .catch((error) => {
+        console.error("Error fetching data", error);
+        setMovieList([]);
+        setError("Error fetching data. Please try again."); // Set an error message
+      });
+  };
+  
     const SEARCH_API=`https://api.themoviedb.org/3/search/movie?&api_key=${TMDB_API_KEY}&query=`;
 
     useEffect(() => {
@@ -32,13 +41,19 @@ export const SearchList = ({searchQuery}) => {
     
   return (
     <>
-     <div className='movie-list-conatiner'>
-        {
-            movieList.map((movie) => (
-                <MovieCard key={movie.id} {...movie}/>
-            ))
-        }
-    </div>
+     {error ? (
+        <div className='error-message'>{error}</div>
+      ) : (
+        <div className='movie-list-conatiner'>
+          {movieList.length > 0 ? (
+            movieList.map((movie) => <MovieCard key={movie.id} {...movie} />)
+          ) : (
+            <div className='no-results-message'>
+              No movies found. Please enter a valid search query.
+            </div>
+          )}
+        </div>
+      )}
     </>
   )
 }

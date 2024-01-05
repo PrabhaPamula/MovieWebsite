@@ -1,26 +1,66 @@
 .search-bar-container {
     position: relative;
 }
-.search {
-    border: 2px solid black;
-    border-radius: 5px;
-    color: black;
-    font-size: 14px;
-    padding: 10px;
+.header .search {
+  border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 14px;
+  padding: 7px;
 }
-.search:focus{
-    outline: none;
+
+.search:focus {
+  outline: none;
 }
+
 .logo {
   font-size: 20px;
   font-weight: bolder;
   text-align: center;
-  margin-top: 5px;
 }
 .logo span {
   color: red;
   font-weight: 100;
 }
+
+.header{
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.headerLeft {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.headerRight{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.headerRight .header-btn {
+  background-color: green;
+  padding: 7px 15px;
+  border-radius: 5px;
+}
+.headerRight Link::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+  }
+  .headerRight Link:hover::after{
+  width: 100%;
+  }
 
 
 /* Styles for the suggestions list */
@@ -49,8 +89,6 @@
   .suggestion:hover {
     background-color: #d4d1d1;
   }
-
-
 
   .navbar-item-icon{
     color: white;

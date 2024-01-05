@@ -27,34 +27,6 @@ export const MovieList = () => {
         }
     },[type])
 
-   
-
-    //2nd time for navigating popular, top_rated, etc working properly
-    // useEffect(() => {
-    //     getData();
-    // },[])
-
-    // useEffect(() => {
-    //     getData();
-    // },[type])
-
-    // const getData = () => {
-    //     fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=3362e13b6c276e43bf2ec6e5b12f4e5b&language=en-US`)
-    //     .then((res) => res.json())
-    //     .then((data) => setMovieList(data.results))
-    // }
-
-
-//original - initial code
-    // useEffect(() => {
-    //     fetch("https://api.themoviedb.org/3/movie/popular?api_key=3362e13b6c276e43bf2ec6e5b12f4e5b&language=en-US")
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //         console.log(data);
-    //         setMovieList(data.results);
-    //     })
-    // }, [])
-
   return (
     <>
     <div className='movie-list-conatiner'>
